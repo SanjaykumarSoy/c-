@@ -1,0 +1,32 @@
+#include <iostream>
+using namespace std;
+class student{
+    public:
+    int roll;
+    char sname[100];
+    char cname[100];
+    void input(){
+        cout<< "enter roll number"<<endl;
+        cin>>roll;
+    
+    cout<<"enter your name:"<<endl;
+    cin>>sname;
+        cout<<"enter college name:"<<endl;
+        cin>>cname;
+    }
+};
+class college:public student{
+    public:
+    void display(){
+        cout<<"roll number:"<<roll;
+        cout<<"\nname="<<sname;
+        cout<<"\ncollege="<<cname;
+        
+    }
+};
+int main(){
+    college col;
+    col.input();
+    col.display();
+    return 0;
+}
