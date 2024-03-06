@@ -1,0 +1,48 @@
+#include<iostream>
+using namespace std;
+class shape{
+  public:
+  virtual double area()=0;
+  virtual double perimeter()=0;};
+class rectangle: public shape{
+  private:
+  double length;
+  double width;
+  public:
+  rectangle(double l, double w):l(length), w(width){}
+  double area() override{
+    return  length*width;
+  }
+  double perimeter()override{
+    return 2*(length+width);
+  }
+};
+class triangle: public shape{
+  private:
+  double side1;
+  double side2;
+  double side3;
+  public :
+  triangle(double s1, double s2 ,double s3):s1(side1),s2(side2),s3(side3){}
+  double area() override{
+   
+        return 0.5*side1*side2;
+  }
+  double perimeter()override{
+    return side1+side2+side3;
+  }
+};
+int main(){
+  rectangle rect(3,5);
+  triangle tri(4,7,2);
+  cout<<"rectangle"<<endl;
+  cout<<"area="<<rect.area()<<endl;
+  cout<<"perimeter="<<rect.perimeter()<<endl;
+  cout<<endl;
+  cout<<"triangle"<<endl;
+  cout<<"area="<<tri.area()<<endl;
+  cout<<"perimeter="<<tri.perimeter()<<endl;
+  cout<<endl;
+  return 0;
+}
+
